@@ -50,7 +50,7 @@ void Boid::moveBoid() {
   m_BoidTransform->setTranslation(m_Position);
 }
 
-//this method is extra, was for cacluting any vector based on rotation
+//this function is extra, was for cacluting any vector based on rotation
 QVector3D Boid::calculateVectorFromRotation(QVector3D v) {
   QVector4D quaternion = m_BoidTransform->rotation().toVector4D();
 
