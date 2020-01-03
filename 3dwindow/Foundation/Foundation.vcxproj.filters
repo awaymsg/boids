@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Alloc">
+      <UniqueIdentifier>{5f21f677-50e9-4dc2-abad-ad30089fb938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Container">
+      <UniqueIdentifier>{acd6d44f-033a-4a52-94bc-0c17aa827393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{fdc9fbe4-64a4-4f23-a5ca-7190d60ea383}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Util.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

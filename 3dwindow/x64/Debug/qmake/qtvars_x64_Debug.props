@@ -1,0 +1,26 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+<Qt_DEFINES_>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DRENDER_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DCORE_LIB;QT_GAMEPAD_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB</Qt_DEFINES_>
+<Qt_INCLUDEPATH_>.;D:\Development\Qt\5.12.6\msvc2017_64\include;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DAnimation;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DExtras;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DRender;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DInput;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DLogic;D:\Development\Qt\5.12.6\msvc2017_64\include\Qt3DCore;D:\Development\Qt\5.12.6\msvc2017_64\include\QtGamepad;D:\Development\Qt\5.12.6\msvc2017_64\include\QtWidgets;D:\Development\Qt\5.12.6\msvc2017_64\include\QtGui;D:\Development\Qt\5.12.6\msvc2017_64\include\QtANGLE;D:\Development\Qt\5.12.6\msvc2017_64\include\QtNetwork;D:\Development\Qt\5.12.6\msvc2017_64\include\QtCore;/include;D:\Development\Qt\5.12.6\msvc2017_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_LIBS_>D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DAnimationd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DExtrasd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DRenderd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DInputd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DLogicd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt53DCored.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt5Gamepadd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt5Widgetsd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt5Guid.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt5Networkd.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\Qt5Cored.lib;D:\Development\Qt\5.12.6\msvc2017_64\lib\qtmaind.lib;shell32.lib</Qt_LIBS_>
+<Qt_LIBPATH_>C:\openssl\lib;C:\Utils\my_sql\mysql-5.6.11-winx64\lib;C:\Utils\postgresql\pgsql\lib</Qt_LIBPATH_>
+<Qt_INCLUDEPATH_
+      >$(Qt_INCLUDEPATH_);Debug;D:\Development\CPP\3dwindow\3dwindow</Qt_INCLUDEPATH_>
+    <QtBkup_QtInstall
+      >5.12.6</QtBkup_QtInstall>
+    <QtBkup_QtModules
+      >3danimation;3dcore;3dextras;3dinput;3dlogic;3drender;core;gui;widgets</QtBkup_QtModules>
+    <QtBkup_QtPathBinaries
+      >bin</QtBkup_QtPathBinaries>
+    <QtBkup_QtPathLibraryExecutables
+      >bin</QtBkup_QtPathLibraryExecutables>
+    <QtBkup_QtHeaderSearchPath
+      ></QtBkup_QtHeaderSearchPath>
+    <QtBkup_QtLibrarySearchPath
+      ></QtBkup_QtLibrarySearchPath>
+    <QtBkup_QtVars
+      >DEFINES=/-D(\w+)/$1/;INCLUDEPATH=INCPATH/-I(\x22[^\x22]+\x22|[^\s]+)/$1/;LIBS=/(?:\/LIBPATH:(?:\x22[^\x22]+\x22|[^\s]+))|(\x22[^\x22]+\x22|[^\s]+)/$1/;LIBPATH=LIBS/\/LIBPATH:(\x22[^\x22]+\x22|[^\s]+)/$1/</QtBkup_QtVars>
+    <QtBkup_QMakeCodeLines
+      ></QtBkup_QMakeCodeLines>
+  </PropertyGroup>
+</Project>

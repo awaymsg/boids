@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GridDrawer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Boid.cpp
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(88): warning C4189: 'num5': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(91): warning C4189: 'num8': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(94): warning C4189: 'num11': local variable is initialized but not referenced
+  GridDrawer.vcxproj -> D:\Development\CPP\3dwindow\3dwindow\debug\GridDrawer.exe
