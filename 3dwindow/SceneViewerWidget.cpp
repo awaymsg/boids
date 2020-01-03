@@ -13,7 +13,6 @@
 #include <Qt3DExtras/QPhongMaterial>
 #include <QDebug>
 
-#include "Gizmos.h"
 #include "BoidController.h"
 
 SceneViewerWidget::SceneViewerWidget( QWidget* parent)
@@ -45,8 +44,6 @@ SceneViewerWidget::SceneViewerWidget( QWidget* parent)
   m_CameraController->setLookSpeed( 75.0);
   m_CameraController->setCamera( cameraEntity);
 
-  //Gizmos::Axes *axes = new Gizmos::Axes( m_RootEntity );
-  //Gizmos::Grid *grid = new Gizmos::Grid( m_RootEntity );
   BoidController *boidController = new BoidController( m_RootEntity );
 }
 

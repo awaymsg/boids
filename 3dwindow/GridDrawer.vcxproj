@@ -189,7 +189,6 @@
   <ItemGroup>
     <ClCompile Include="BoidController.cpp" />
     <ClCompile Include="CameraController.cpp" />
-    <ClCompile Include="Gizmos.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SceneViewerWidget.cpp" />
@@ -223,9 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CameraController.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="Gizmos.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SceneViewerWidget.h" />

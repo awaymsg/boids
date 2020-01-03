@@ -9,8 +9,8 @@ class Boid : public Qt3DCore::QEntity
 private:
   QVector3D m_Position;
   QVector3D m_MovementVector;
-  QVector3D m_ForwardVector;
-  QVector3D m_BackwardVector;
+  QVector3D m_UpVector;
+  QVector3D m_DownVector;
   QVector3D m_RotationVector;
   QVector3D m_EulerAngles;
 
@@ -25,7 +25,7 @@ private:
 public:
   Boid(QNode *parent = nullptr);
   QVector3D position() { return m_Position; };
-  QVector3D forwardVector() { return m_ForwardVector; };
+  QVector3D forwardVector() { return m_UpVector; };
   QVector3D eulerAngles() { return m_EulerAngles; }
   
   Qt3DExtras::QConeMesh *getMesh() { return m_BoidMesh; };
@@ -35,7 +35,7 @@ public:
 
   void moveBoid();
   QVector3D calculateVectorFromRotation(QVector3D v);
-  void calculateForward();
+  void calculateUpFromRotation();
   void checkPosition(QVector3D target, QVector3D targetAngles);
 
 protected:
