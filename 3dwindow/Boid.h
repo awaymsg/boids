@@ -34,7 +34,7 @@ public:
   Qt3DCore::QEntity *getEntity() { return m_BoidEntity; };
 
   void moveBoid();
-  QVector3D calculateVector(QVector3D v);
+  QVector3D calculateVectorFromRotation(QVector3D v);
   void calculateForward();
   void checkPosition(QVector3D target, QVector3D targetAngles);
 

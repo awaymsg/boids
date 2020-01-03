@@ -7,7 +7,6 @@ Boid::Boid(QNode *parent)
   m_BoidColor(255, 255, 0)
 {
   m_MovementVector = QVector3D(0, 0.01f, 0);
-  //qDebug() << "Movement: " << m_MovementVector;
   m_RotationVector = QVector3D(rand() - 1, rand() - 1, rand() - 1);
 
   m_BoidMesh = new Qt3DExtras::QConeMesh();
@@ -34,13 +33,13 @@ Boid::Boid(QNode *parent)
   m_BoidEntity->addComponent(m_BoidMaterial);
 }
 
+//the boid moves by calculating its up vector from its rotation and using the up vector to determine velocity
 void Boid::moveBoid() {
   m_EulerAngles = m_BoidTransform->rotation().toEulerAngles();
-  calculateForward();
-  m_BackwardVector = m_ForwardVector * -1.0f;
-  m_Position += m_ForwardVector * 0.1f;
+  calculateUpFromRotation();
+  m_DownVector = m_UpVector * -1.0f;
+  m_Position += m_UpVector * 0.1f;
   
-  //reset position within bounds
   if (m_Position.x() > 12.0f) m_Position.setX(-12.0f);
   if (m_Position.x() < -12.0f) m_Position.setX(12.0f);
   if (m_Position.y() > 12.0f) m_Position.setY(-12.0f);
@@ -48,12 +47,10 @@ void Boid::moveBoid() {
   if (m_Position.z() > 12.0f) m_Position.setZ(-12.0f);
   if (m_Position.z() < -12.0f) m_Position.setZ(12.0f);
 
-  //qDebug() << m_Position;
   m_BoidTransform->setTranslation(m_Position);
 }
 
-//calculate vector based on rotation
-QVector3D Boid::calculateVector(QVector3D v) {
+QVector3D Boid::calculateVectorFromRotation(QVector3D v) {
   QVector4D quaternion = m_BoidTransform->rotation().toVector4D();
 
   float num1 = quaternion.x() * 2.0f;
@@ -78,7 +75,7 @@ QVector3D Boid::calculateVector(QVector3D v) {
   return vector;
 }
 
-void Boid::calculateForward() {
+void Boid::calculateUpFromRotation() {
   QVector4D quaternion = m_BoidTransform->rotation().toVector4D();
   
   float num1 = quaternion.x() * 2.0f;
@@ -94,13 +91,13 @@ void Boid::calculateForward() {
   float num11 = quaternion.w() * num2;
   float num12 = quaternion.w() * num3;
 
-  m_ForwardVector.setX((float)(num7 - num12));
-  m_ForwardVector.setY((float)(1.0 - (num4 + num6)));
-  m_ForwardVector.setZ((float)(num9 + num10));
+  m_UpVector.setX((float)(num7 - num12));
+  m_UpVector.setY((float)(1.0 - (num4 + num6)));
+  m_UpVector.setZ((float)(num9 + num10));
 }
 
 void Boid::checkPosition(QVector3D target, QVector3D targetAngles) {
-  if (m_BackwardVector.distanceToPoint(target) < 1.5f) return;
+  if (m_DownVector.distanceToPoint(target) < 1.5f) return;
 
   if (m_Position.distanceToPoint(target) < 1.5f) {
     separation(target);

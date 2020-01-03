@@ -14,9 +14,7 @@ BoidController::BoidController(QNode *parent)
 }
 
 void BoidController::moveBoids() {
-  //qDebug() << "Running";
   for (int i = 0; i < 150; i++) {
-    //qDebug() << i;
     for (int j = 0; j < 150; j++) {
       if (j == i) continue;
       m_BoidArr[i]->checkPosition(m_BoidArr[j]->position(), m_BoidArr[j]->eulerAngles());
@@ -24,5 +22,4 @@ void BoidController::moveBoids() {
   
     m_BoidArr[i]->moveBoid();
   }
-  //qDebug() << "Moved";
 }
