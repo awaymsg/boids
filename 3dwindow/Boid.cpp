@@ -98,6 +98,8 @@ void Boid::calculateUpFromRotation() {
 }
 
 void Boid::checkPosition(QVector3D target, QVector3D targetAngles) {
+  //avoid distance formula if target is too far away to matter
+  if (abs(target.x() - m_Position.x() > 1.5f) || abs(target.y() - m_Position.y() > 1.5f) || abs(target.z() - m_Position.z() > 1.5f)) return;
   if (m_DownVector.distanceToPoint(target) < 1.5f) return;
 
   if (m_Position.distanceToPoint(target) < 1.5f) {
