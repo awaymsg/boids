@@ -50,7 +50,7 @@ void Boid::moveBoid() {
 }
 
 //this function is extra, was for cacluting any vector based on rotation
-QVector3D Boid::calculateVectorFromRotation(QVector3D v) {
+QVector3D Boid::calculateVectorFromRotation(const QVector3D &v) {
   QVector4D quaternion = m_BoidTransform->rotation().toVector4D();
 
   float num1 = quaternion.x() * 2.0f;
@@ -96,7 +96,7 @@ void Boid::calculateUpFromRotation() {
   m_UpVector.setZ((float)(num9 + num10));
 }
 
-void Boid::checkPosition(QVector3D target, QVector3D targetAngles) {
+void Boid::checkPosition(const QVector3D &target, const QVector3D &targetAngles) {
   //avoid distance formula if target is too far away to matter
   if (abs(target.x() - m_Position.x() > 1.5f) || abs(target.y() - m_Position.y() > 1.5f) || abs(target.z() - m_Position.z() > 1.5f)) return;
   if (m_DownVector.distanceToPoint(target) < 1.5f) return;
@@ -109,7 +109,7 @@ void Boid::checkPosition(QVector3D target, QVector3D targetAngles) {
 }
 
 //steer boids away from other boids
-void Boid::separation(QVector3D targetPos) {
+void Boid::separation(const QVector3D &targetPos) {
   if (m_Position.x() < targetPos.x())
     m_BoidTransform->setRotationZ(m_BoidTransform->rotationZ() + 1);
   else
@@ -125,7 +125,7 @@ void Boid::separation(QVector3D targetPos) {
 }
 
 //make boid try to align forward direction with nearby boids
-void Boid::cohesion(QVector3D targetAngles) {
+void Boid::cohesion(const QVector3D &targetAngles) {
   if (m_BoidTransform->rotationX() < targetAngles.x())
     m_BoidTransform->setRotationX(m_BoidTransform->rotationX() + 1);
   else
@@ -143,7 +143,7 @@ void Boid::cohesion(QVector3D targetAngles) {
 }
 
 //steer boid toward nearby boid
-void Boid::alignment(QVector3D targetPos) {
+void Boid::alignment(const QVector3D &targetPos) {
   if (m_Position.x() < targetPos.x())
     m_BoidTransform->setRotationZ(m_BoidTransform->rotationZ() - 1);
   else

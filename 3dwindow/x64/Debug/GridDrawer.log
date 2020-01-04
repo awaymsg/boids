@@ -1,8 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GridDrawer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Moc'ing BoidController.h...
+  Moc'ing Boid.h...
+  Boid.cpp
   BoidController.cpp
+  moc_Boid.cpp
   moc_BoidController.cpp
   SceneViewerWidget.cpp
-d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(47): warning C4189: 'boidController': local variable is initialized but not referenced
-d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(65): warning C4100: 'event': unreferenced formal parameter
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(85): warning C4189: 'num5': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(88): warning C4189: 'num8': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\boid.cpp(91): warning C4189: 'num11': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(46): warning C4189: 'boidController': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(64): warning C4100: 'event': unreferenced formal parameter
   GridDrawer.vcxproj -> D:\Development\CPP\3dwindow\3dwindow\debug\GridDrawer.exe

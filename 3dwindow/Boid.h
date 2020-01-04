@@ -34,12 +34,12 @@ public:
   Qt3DCore::QEntity *getEntity() { return m_BoidEntity; };
 
   void moveBoid();
-  QVector3D calculateVectorFromRotation(QVector3D v);
+  QVector3D calculateVectorFromRotation(const QVector3D &v);
   void calculateUpFromRotation();
-  void checkPosition(QVector3D target, QVector3D targetAngles);
+  void checkPosition(const QVector3D &target, const QVector3D &targetAngles);
 
 protected:
-  void separation(QVector3D targetPos);
-  void cohesion(QVector3D eulerAngles);
-  void alignment(QVector3D targetPos);
+  void separation(const QVector3D &targetPos);
+  void cohesion(const QVector3D &eulerAngles);
+  void alignment(const QVector3D &targetPos);
 };
