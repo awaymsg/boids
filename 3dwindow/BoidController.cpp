@@ -1,5 +1,4 @@
 #include "BoidController.h"
-#include <QDebug>
 
 BoidController::BoidController(QNode *parent)
 {

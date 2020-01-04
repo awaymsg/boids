@@ -11,7 +11,6 @@
 #include <Qt3DExtras/qfirstpersoncameracontroller.h>
 #include <Qt3DExtras/QTorusMesh>
 #include <Qt3DExtras/QPhongMaterial>
-#include <QDebug>
 
 #include "BoidController.h"
 

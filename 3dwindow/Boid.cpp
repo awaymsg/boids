@@ -1,5 +1,4 @@
 #include "Boid.h"
-#include <qdebug.h>
 
 Boid::Boid(QNode *parent)
   : QEntity(parent),
