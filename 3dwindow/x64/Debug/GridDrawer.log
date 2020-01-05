@@ -5,9 +5,9 @@
   moc_Boid.cpp
   moc_BoidController.cpp
   SceneViewerWidget.cpp
+d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(46): warning C4189: 'boidController': local variable is initialized but not referenced
+d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(64): warning C4100: 'event': unreferenced formal parameter
 d:\development\cpp\3dwindow\3dwindow\boid.cpp(85): warning C4189: 'num5': local variable is initialized but not referenced
 d:\development\cpp\3dwindow\3dwindow\boid.cpp(88): warning C4189: 'num8': local variable is initialized but not referenced
 d:\development\cpp\3dwindow\3dwindow\boid.cpp(91): warning C4189: 'num11': local variable is initialized but not referenced
-d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(46): warning C4189: 'boidController': local variable is initialized but not referenced
-d:\development\cpp\3dwindow\3dwindow\sceneviewerwidget.cpp(64): warning C4100: 'event': unreferenced formal parameter
   GridDrawer.vcxproj -> D:\Development\CPP\3dwindow\3dwindow\debug\GridDrawer.exe

@@ -2,11 +2,11 @@
 
 Boid::Boid(QNode *parent)
   : QEntity(parent),
-  m_Position(rand() % 10 - 5, rand() % 10 - 5, rand() % 10 - 5),
+  m_Position(rand() % RANDSIZE - RANDMODIFIER, rand() % RANDSIZE - RANDMODIFIER, rand() % RANDSIZE - RANDMODIFIER),
   m_BoidColor(255, 255, 0)
 {
-  m_MovementVector = QVector3D(0, 0.01f, 0);
   m_RotationVector = QVector3D(rand() - 1, rand() - 1, rand() - 1);
+  m_SensoryRange = 1.5f;
 
   m_BoidMesh = new Qt3DExtras::QConeMesh();
   m_BoidMesh->setBottomRadius(0.05f);
@@ -39,12 +39,12 @@ void Boid::moveBoid() {
   m_DownVector = m_UpVector * -1.0f;
   m_Position += m_UpVector * 0.1f;
   
-  if (m_Position.x() > 12.0f) m_Position.setX(-12.0f);
-  if (m_Position.x() < -12.0f) m_Position.setX(12.0f);
-  if (m_Position.y() > 12.0f) m_Position.setY(-12.0f);
-  if (m_Position.y() < -12.0f) m_Position.setY(12.0f);
-  if (m_Position.z() > 12.0f) m_Position.setZ(-12.0f);
-  if (m_Position.z() < -12.0f) m_Position.setZ(12.0f);
+  if (m_Position.x() > BOUNDS) m_Position.setX(-BOUNDS);
+  if (m_Position.x() < -BOUNDS) m_Position.setX(BOUNDS);
+  if (m_Position.y() > BOUNDS) m_Position.setY(-BOUNDS);
+  if (m_Position.y() < -BOUNDS) m_Position.setY(BOUNDS);
+  if (m_Position.z() > BOUNDS) m_Position.setZ(-BOUNDS);
+  if (m_Position.z() < -BOUNDS) m_Position.setZ(BOUNDS);
 
   m_BoidTransform->setTranslation(m_Position);
 }
@@ -98,13 +98,13 @@ void Boid::calculateUpFromRotation() {
 
 void Boid::checkPosition(const QVector3D &target, const QVector3D &targetAngles) {
   //avoid distance formula if target is too far away to matter
-  if (abs(target.x() - m_Position.x() > 1.5f) || abs(target.y() - m_Position.y() > 1.5f) || abs(target.z() - m_Position.z() > 1.5f)) return;
-  if (m_DownVector.distanceToPoint(target) < 1.5f) return;
+  if (abs(target.x() - m_Position.x() > m_SensoryRange) || abs(target.y() - m_Position.y() > m_SensoryRange) || abs(target.z() - m_Position.z() > m_SensoryRange)) return;
+  if (m_DownVector.distanceToPoint(target) < m_SensoryRange) return;
 
-  if (m_Position.distanceToPoint(target) < 1.5f) {
+  if (m_Position.distanceToPoint(target) < m_SensoryRange) {
     separation(target);
     cohesion(targetAngles);
-    alignment(target);
+    attraction(target);
   }
 }
 
@@ -143,7 +143,7 @@ void Boid::cohesion(const QVector3D &targetAngles) {
 }
 
 //steer boid toward nearby boid
-void Boid::alignment(const QVector3D &targetPos) {
+void Boid::attraction(const QVector3D &targetPos) {
   if (m_Position.x() < targetPos.x())
     m_BoidTransform->setRotationZ(m_BoidTransform->rotationZ() - 1);
   else

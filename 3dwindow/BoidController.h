@@ -8,7 +8,8 @@ class BoidController : public Qt3DCore::QEntity
   Q_OBJECT;
 
 private:
-  Boid *m_BoidArr[150];
+  enum { BOIDARRSIZE = 150 };
+  Boid *m_BoidArr[BOIDARRSIZE];
   QTimer *m_timer;
 
 public:

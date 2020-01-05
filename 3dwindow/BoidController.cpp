@@ -2,7 +2,7 @@
 
 BoidController::BoidController(QNode *parent)
 {
-  for (int i = 0; i < 150; i++) {
+  for (int i = 0; i < BOIDARRSIZE; i++) {
     m_BoidArr[i] = new Boid(parent);
   }
 
@@ -13,8 +13,8 @@ BoidController::BoidController(QNode *parent)
 }
 
 void BoidController::moveBoids() {
-  for (int i = 0; i < 150; i++) {
-    for (int j = 0; j < 150; j++) {
+  for (int i = 0; i < BOIDARRSIZE; i++) {
+    for (int j = 0; j < BOIDARRSIZE; j++) {
       if (j == i) continue;
       m_BoidArr[i]->checkPosition(m_BoidArr[j]->position(), m_BoidArr[j]->eulerAngles());
     }
